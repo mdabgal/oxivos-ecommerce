@@ -5,15 +5,15 @@ import { products } from '@/data/products';
 import ProductCard from '@/components/products/ProductCard';
 
 export default function ProductsPage() {
-  // সার্চ, ফিল্টার এবং সর্টিং স্টেট
+
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [sortBy, setSortBy] = useState('default');
 
-  // ডাইনামিক ক্যাটেগরি লিস্ট তৈরি (products.js থেকে অটোমেটিক ইউনিক ক্যাটেগরি নেবে)
+
   const categories = ['All', ...new Set(products.map((p) => p.category))];
 
-  // ডাটা ফিল্টারিং ও সার্চ লজিক
+
   const filteredProducts = products
     .filter((product) => {
       const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -32,7 +32,7 @@ export default function ProductsPage() {
     <main className="min-h-screen bg-slate-50 dark:bg-slate-950 py-12 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Page Header */}
+     
         <div className="mb-10 text-center sm:text-left">
           <h1 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white uppercase mb-2">
             Our Collection
@@ -42,10 +42,10 @@ export default function ProductsPage() {
           </p>
         </div>
 
-        {/* Controls: Search, Filter, Sort */}
+       
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 mb-8 shadow-xs flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between transition-colors">
           
-          {/* Search Bar */}
+        
           <div className="relative flex-1 max-w-md">
             <span className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -61,10 +61,10 @@ export default function ProductsPage() {
             />
           </div>
 
-          {/* Filter & Sort Buttons Group */}
+         
           <div className="flex flex-wrap items-center gap-4">
             
-            {/* Category Filters */}
+          
             <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
                 <button
@@ -81,7 +81,6 @@ export default function ProductsPage() {
               ))}
             </div>
 
-            {/* Sorting Dropdown */}
             <div className="flex items-center gap-2 min-w-[160px]">
               <select
                 value={sortBy}
@@ -98,7 +97,7 @@ export default function ProductsPage() {
           </div>
         </div>
 
-        {/* Empty State */}
+       
         {filteredProducts.length === 0 && (
           <div className="text-center py-20 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="mx-auto h-12 w-12 text-slate-400 mb-4">
@@ -109,7 +108,6 @@ export default function ProductsPage() {
           </div>
         )}
 
-        {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />

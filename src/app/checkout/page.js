@@ -77,7 +77,6 @@ const { cart, setCart } = useCart();
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           
-          {/* Left: Shipping Form (3 Columns) */}
           <form onSubmit={handleSubmit} className="lg:col-span-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 rounded-2xl space-y-6 shadow-2xs">
             <h2 className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-tight">Shipping Information</h2>
             
@@ -159,7 +158,7 @@ const { cart, setCart } = useCart();
           <div className="lg:col-span-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl h-fit shadow-xs">
             <h2 className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-tight mb-6">Your Items</h2>
             
-            {/* Scrollable Items List */}
+      
             <div className="max-h-[240px] overflow-y-auto space-y-4 mb-6 pr-1 scrollbar-thin">
               {cart.map((item) => (
                 <div key={item.id} className="flex items-center gap-4 justify-between">
