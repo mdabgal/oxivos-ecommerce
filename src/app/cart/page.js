@@ -6,13 +6,13 @@ import Link from 'next/link';
 export default function CartPage() {
   const { cart, removeFromCart, updateQuantity, clearCart } = useCart();
 
-  // হিসাব-নিকাশ (Calculations)
+ 
   const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
   const shipping = subtotal > 0 ? (subtotal > 5000 ? 0 : 120) : 0; // ৫০০০ টাকার উপরে ফ্রি ডেলিভারি
-  const tax = Math.round(subtotal * 0.05); // ৫% ভ্যাট
+  const tax = Math.round(subtotal * 0.05); 
   const grandTotal = subtotal + shipping + tax;
 
-  // কার্ট খালি থাকলে এই ভিউ দেখাবে
+ 
   if (cart.length === 0) {
     return (
       <div className="min-h-[80vh] flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-950 px-4 transition-colors">
@@ -34,7 +34,7 @@ export default function CartPage() {
     <main className="min-h-screen bg-slate-50 dark:bg-slate-950 py-12 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Title */}
+    
         <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-6 mb-8">
           <div>
             <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Shopping Bag</h1>
@@ -48,17 +48,17 @@ export default function CartPage() {
           </button>
         </div>
 
-        {/* Layout Split */}
+       
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
-          {/* Left Side: Cart Items List */}
+         
           <div className="lg:col-span-2 space-y-4">
             {cart.map((item) => (
               <div 
                 key={item.id} 
                 className="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 rounded-2xl gap-4 shadow-2xs transition-colors"
               >
-                {/* Product Image & Meta */}
+             
                 <div className="flex items-center gap-4 w-full sm:w-auto">
                   <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-800 shrink-0">
                     <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
@@ -70,9 +70,9 @@ export default function CartPage() {
                   </div>
                 </div>
 
-                {/* Actions: Quantity & Pricing */}
+              
                 <div className="flex items-center justify-between sm:justify-end gap-6 sm:gap-8 w-full sm:w-auto border-t sm:border-t-0 pt-3 sm:pt-0 border-slate-100 dark:border-slate-800/80">
-                  {/* Quantity Controller */}
+                 
                   <div className="flex items-center border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden bg-slate-50 dark:bg-slate-950">
                     <button 
                       onClick={() => updateQuantity(item.id, item.quantity - 1)}
@@ -89,12 +89,12 @@ export default function CartPage() {
                     </button>
                   </div>
 
-                  {/* Total Price */}
+                 
                   <div className="text-right min-w-[80px]">
                     <span className="text-sm sm:text-base font-black text-slate-900 dark:text-white">৳{item.price * item.quantity}</span>
                   </div>
 
-                  {/* Remove Button */}
+               
                   <button 
                     onClick={() => removeFromCart(item.id)}
                     className="text-slate-400 hover:text-red-500 dark:text-slate-600 dark:hover:text-red-500 transition-colors p-1"
@@ -110,7 +110,7 @@ export default function CartPage() {
             ))}
           </div>
 
-          {/* Right Side: Order Summary */}
+        
           <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl h-fit shadow-xs transition-colors">
             <h2 className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-tight mb-6">Order Summary</h2>
             
@@ -147,10 +147,13 @@ export default function CartPage() {
               <span className="text-2xl font-black text-blue-600 dark:text-blue-400">৳{grandTotal}</span>
             </div>
 
-            {/* Checkout Button */}
-            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-black text-sm uppercase tracking-wider py-4 rounded-xl shadow-md hover:shadow-lg active:scale-98 transition-all cursor-pointer text-center block">
-              Proceed to Checkout
-            </button>
+           {/* Checkout Button */}
+<Link 
+  href="/checkout" 
+  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-black text-sm uppercase tracking-wider py-4 rounded-xl shadow-md hover:shadow-lg active:scale-98 transition-all cursor-pointer text-center block"
+>
+  Proceed to Checkout
+</Link>
 
             <Link href="/products" className="text-center block text-xs font-black uppercase tracking-wider text-slate-500 hover:text-blue-600 dark:hover:text-blue-400 mt-4 transition-colors">
               Continue Shopping
