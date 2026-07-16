@@ -12,7 +12,7 @@ export default function ProductCard({ product }) {
   return (
     <div className="group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
       
-      {/* Product Image Container */}
+    
       <div className="relative aspect-square w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
         <img
           src={product.image}
@@ -51,7 +51,6 @@ export default function ProductCard({ product }) {
         </button>
       </div>
 
-      {/* Product Details */}
       <div className="p-4 flex flex-col flex-grow">
         <span className="text-xs font-semibold tracking-wider text-blue-600 dark:text-blue-400 uppercase mb-1">
           {product.category}
@@ -63,7 +62,7 @@ export default function ProductCard({ product }) {
           </Link>
         </h3>
 
-        {/* Rating */}
+     
         <div className="flex items-center mb-4">
           <div className="flex items-center text-amber-500 mr-2">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -73,7 +72,7 @@ export default function ProductCard({ product }) {
           </div>
         </div>
 
-        {/* Price & View Details Action */}
+     
         <div className="mt-auto flex items-center justify-between">
           <span className="text-lg font-black text-slate-900 dark:text-white">
             ৳{product.price}

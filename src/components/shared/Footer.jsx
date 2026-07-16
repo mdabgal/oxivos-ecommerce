@@ -38,7 +38,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           
-          {/* Brand/About Section & Social Links */}
+         
           <div className="space-y-6">
             <div className="space-y-4">
               <h3 className="text-slate-900 dark:text-white text-xl font-bold tracking-wider">
@@ -66,7 +66,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+        
           <div className="space-y-4">
             <h4 className="text-slate-900 dark:text-white text-sm font-semibold uppercase tracking-wider">Quick Links</h4>
             <ul className="space-y-2 text-sm">
@@ -106,7 +106,7 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Bar */}
+     
         <div className="mt-12 pt-6 border-t border-slate-200 dark:border-slate-900 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 dark:text-slate-500 gap-4">
           <p>&copy; {currentYear} Oxivos Task. Built with Next.js & Tailwind CSS.</p>
           <p>Designed by Candidate</p>

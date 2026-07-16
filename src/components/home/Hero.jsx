@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           
-          {/* Badge */}
+        
           <span className="inline-flex items-center rounded-full bg-blue-50 dark:bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-600 dark:text-blue-400 ring-1 ring-inset ring-blue-500/20 dark:ring-blue-500/30 mb-6 animate-pulse">
             New Festive Collection 2026 
           </span>

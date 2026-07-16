@@ -28,13 +28,13 @@ export default function WishlistPage() {
     <main className="min-h-screen bg-slate-50 dark:bg-slate-950 py-12 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Title */}
+    
         <div className="border-b border-slate-200 dark:border-slate-800 pb-6 mb-8">
           <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Favorites</h1>
           <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">You have {wishlist.length} items saved in your wishlist</p>
         </div>
 
-        {/* Wishlist Grid Layout */}
+       
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {wishlist.map((product) => (
             <div 
@@ -52,7 +52,7 @@ export default function WishlistPage() {
                 </svg>
               </button>
 
-              {/* Product Image */}
+          
               <div className="relative aspect-square w-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
                 <img 
                   src={product.image} 

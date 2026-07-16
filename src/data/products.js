@@ -198,5 +198,58 @@ export const products = [
     rating: 4.7,
     image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=600&auto=format&fit=crop",
     inStock: true
+  },
+
+  
+  {
+    id: 21,
+    name: "Classic Embroidered Royal Navy Panjabi",
+    description: "Premium cotton Panjabi featuring exquisite minimal embroidery around the collar and placket. Perfect for festive celebrations.",
+    price: 2950,
+    category: "Panjabi",
+    rating: 4.8,
+    image: "https://images.unsplash.com/photo-1684688635718-9839255b7061",
+    inStock: true
+  },
+  {
+    id: 22,
+    name: "Semi-Formal Luxury Silk Blend Panjabi",
+    description: "Elegant silk-blend Panjabi with a subtle natural sheen. Tailored for comfort and a sophisticated evening look.",
+    price: 3800,
+    category: "Panjabi",
+    rating: 4.7,
+    image: "https://images.unsplash.com/photo-1683105653852-25028a53a3e4",
+    inStock: true
+  },
+  {
+    id: 23,
+    name: "Minimalist Pure Linen Summer Panjabi",
+    description: "Ultra-breathable premium linen Panjabi in a pastel hue. Crafted meticulously for hot summer days and casual hangouts.",
+    price: 2400,
+    category: "Panjabi",
+    rating: 4.4,
+    image: "https://images.unsplash.com/photo-1683545929327-83a50bdd1e21",
+    inStock: true
+  },
+  {
+    id: 24,
+    name: "Geometric Jacquard Premium Crimson Panjabi",
+    description: "Crimson Panjabi woven with fine geometric jacquard patterns. Features custom metallic buttons for an upscale traditional vibe.",
+    price: 3200,
+    category: "Panjabi",
+    rating: 4.6,
+    image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=600&auto=format&fit=crop",
+    inStock: false
+  },
+  {
+    id: 25,
+    name: "Vintage Monochromatic Solid Black Panjabi",
+    description: "An absolute wardrobe essential. Deep jet-black premium cotton fabric with clean lines and sharp modern cuts.",
+    price: 2750,
+    category: "Panjabi",
+    rating: 4.9,
+    image: "https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?q=80&w=600&auto=format&fit=crop",
+    inStock: true
   }
+
 ];

@@ -8,7 +8,7 @@ export default function CartPage() {
 
  
   const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
-  const shipping = subtotal > 0 ? (subtotal > 5000 ? 0 : 120) : 0; // ৫০০০ টাকার উপরে ফ্রি ডেলিভারি
+  const shipping = subtotal > 0 ? (subtotal > 5000 ? 0 : 120) : 0; 
   const tax = Math.round(subtotal * 0.05); 
   const grandTotal = subtotal + shipping + tax;
 
@@ -141,13 +141,13 @@ export default function CartPage() {
               )}
             </div>
 
-            {/* Total */}
+           
             <div className="flex justify-between items-baseline mb-8">
               <span className="text-base font-black text-slate-900 dark:text-white uppercase tracking-wider">Total amount</span>
               <span className="text-2xl font-black text-blue-600 dark:text-blue-400">৳{grandTotal}</span>
             </div>
 
-           {/* Checkout Button */}
+          
 <Link 
   href="/checkout" 
   className="w-full bg-blue-600 hover:bg-blue-700 text-white font-black text-sm uppercase tracking-wider py-4 rounded-xl shadow-md hover:shadow-lg active:scale-98 transition-all cursor-pointer text-center block"

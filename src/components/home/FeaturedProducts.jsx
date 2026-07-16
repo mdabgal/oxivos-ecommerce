@@ -12,7 +12,7 @@ export default function FeaturedProducts() {
     <section className="py-16 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
+       
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 gap-4">
           <div>
             <span className="text-xs font-bold tracking-widest text-blue-600 dark:text-blue-500 uppercase block mb-2">
@@ -32,7 +32,7 @@ export default function FeaturedProducts() {
           </Link>
         </div>
 
-        {/* Products Grid */}
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {featuredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />

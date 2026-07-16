@@ -8,7 +8,7 @@ export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
 
-  // LocalStorage থেকে ডাটা লোড করা
+
   useEffect(() => {
     const savedCart = localStorage.getItem('oxivos_cart');
     const savedWishlist = localStorage.getItem('oxivos_wishlist');

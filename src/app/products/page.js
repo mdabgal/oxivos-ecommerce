@@ -25,7 +25,7 @@ export default function ProductsPage() {
       if (sortBy === 'price-low') return a.price - b.price;
       if (sortBy === 'price-high') return b.price - a.price;
       if (sortBy === 'rating') return b.rating - a.rating;
-      return 0; // Default order
+      return 0; 
     });
 
   return (
