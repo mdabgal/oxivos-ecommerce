@@ -106,9 +106,9 @@ export default function Navbar() {
               )}
             </Link>
 
-          </div>
-        </div>
-      </div>
+              </div>
+               </div>
+               </div>
 
       
       {isOpen && (
@@ -133,8 +133,8 @@ export default function Navbar() {
               Shop
             </Link>
           </div>
-        </div>
+               </div>
       )}
-    </header>
+                </header>
   );
 }

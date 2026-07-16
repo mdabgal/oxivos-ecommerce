@@ -8,7 +8,6 @@ export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
 
-
   useEffect(() => {
     const savedCart = localStorage.getItem('oxivos_cart');
     const savedWishlist = localStorage.getItem('oxivos_wishlist');
@@ -63,8 +62,14 @@ export function CartProvider({ children }) {
     });
   };
 
+
+  const clearCart = () => {
+    setCart([]);
+    localStorage.removeItem('oxivos_cart');
+  };
+
   return (
-    <CartContext.Provider value={{ cart, wishlist, addToCart, removeFromCart, updateQuantity, toggleWishlist }}>
+    <CartContext.Provider value={{ cart, wishlist, addToCart, removeFromCart, updateQuantity, toggleWishlist, clearCart }}>
       {children}
     </CartContext.Provider>
   );

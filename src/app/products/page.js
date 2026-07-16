@@ -6,19 +6,21 @@ import ProductCard from '@/components/products/ProductCard';
 
 export default function ProductsPage() {
 
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
+const [searchTerm, setSearchTerm] = useState('');
+        const [selectedCategory, setSelectedCategory] = useState('All');
   const [sortBy, setSortBy] = useState('default');
 
 
-  const categories = ['All', ...new Set(products.map((p) => p.category))];
+const categories = ['All', ...new Set(products.map((p) => p.category))];
 
 
   const filteredProducts = products
     .filter((product) => {
       const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            product.description.toLowerCase().includes(searchTerm.toLowerCase());
+        
+      product.description.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
+     
       return matchesSearch && matchesCategory;
     })
     .sort((a, b) => {
@@ -49,14 +51,14 @@ export default function ProductsPage() {
           <div className="relative flex-1 max-w-md">
             <span className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.603 10.601Z" />
+       <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.603 10.601Z" />
               </svg>
             </span>
             <input
               type="text"
-              placeholder="Search products..."
+           placeholder="Search products..."
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white text-sm pl-10 pr-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-800 focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition-all"
             />
           </div>
@@ -69,10 +71,10 @@ export default function ProductsPage() {
               {categories.map((category) => (
                 <button
                   key={category}
-                  onClick={() => setSelectedCategory(category)}
+              onClick={() => setSelectedCategory(category)}
                   className={`text-xs font-bold px-4 py-2.5 rounded-lg border transition-all ${
-                    selectedCategory === category
-                      ? 'bg-blue-600 border-blue-600 text-white shadow-xs'
+                   selectedCategory === category
+               ? 'bg-blue-600 border-blue-600 text-white shadow-xs'
                       : 'bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
                   }`}
                 >
@@ -84,31 +86,32 @@ export default function ProductsPage() {
             <div className="flex items-center gap-2 min-w-[160px]">
               <select
                 value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
+             onChange={(e) => setSortBy(e.target.value)}
                 className="w-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white text-xs font-bold px-3 py-2.5 rounded-lg border border-slate-200 dark:border-slate-800 focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition-all"
               >
                 <option value="default">Sort By: Default</option>
-                <option value="price-low">Price: Low to High</option>
+                
+             <option value="price-low">Price: Low to High</option>
                 <option value="price-high">Price: High to Low</option>
+                
                 <option value="rating">Popularity (Rating)</option>
               </select>
             </div>
 
           </div>
-        </div>
+            </div>
 
-       
-        {filteredProducts.length === 0 && (
+    {filteredProducts.length === 0 && (
           <div className="text-center py-20 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="mx-auto h-12 w-12 text-slate-400 mb-4">
-              <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.603 10.601Z" />
+         <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.603 10.601Z" />
             </svg>
-            <h3 className="text-base font-bold text-slate-900 dark:text-white mb-1">No products found</h3>
+       <h3 className="text-base font-bold text-slate-900 dark:text-white mb-1">No products found</h3>
             <p className="text-sm text-slate-500 dark:text-slate-400">Try changing your keywords or filters.</p>
-          </div>
+            </div>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

@@ -9,18 +9,17 @@ export function Providers({ children }) {
   useEffect(() => {
    
     const savedTheme = localStorage.getItem('theme');
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
     if (savedTheme === 'dark' || (!savedTheme && systemTheme)) {
-      document.documentElement.classList.add('dark');
+          document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
     setMounted(true);
   }, []);
 
-
-  if (!mounted) {
+ if (!mounted) {
     return <div className="invisible">{children}</div>;
   }
 
