@@ -1,5 +1,6 @@
 'use client';
 
+import CategoryGrid from "@/components/home/CategoryGrid";
 import FeaturedProducts from "@/components/home/FeaturedProducts";
 import Features from "@/components/home/Features";
 import Hero from "@/components/home/Hero";
@@ -14,6 +15,7 @@ export default function Home() {
     <FeaturedProducts/>
     <Features/>
     <Newsletter/>
+    <CategoryGrid/>
     </div>
   );
 }
